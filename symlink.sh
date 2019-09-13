@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 DEV="$HOME/Sites"
-DOTFILES="$DEV/dot"
+DOTFILES="$DEV/dotfiles"
 
 # Check if dotfiles directory exists
 if [ -d "$DOTFILES" ]; then

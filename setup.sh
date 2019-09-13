@@ -2,7 +2,7 @@
 
 # Define where your projects will reside
 DEV="$HOME/Sites"
-DOTFILES="$DEV/dot"
+DOTFILES="$DEV/dotfiles"
 
 # Save current directory into stack
 pushd .
@@ -21,10 +21,11 @@ fi
 if ! [ -x "$(command -v brew)" ]; then
   echo 'Installing Homebrew…' >&2
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-  # Install the programs and applications defined Brewfile`
   cd $DOTFILES && brew bundle
 fi
+
+# Install the programs and applications defined Brewfile`
+cd $DOTFILES && brew bundle
 
 # Link dotfiles for current user home
 echo "$(pwd) Symlinking config files..."
