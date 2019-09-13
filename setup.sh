@@ -30,5 +30,8 @@ fi
 echo "$(pwd) Symlinking config files..."
 . 'symlink.sh'
 
+# Configure sublime text
+# . 'sublime/setup.sh'
+
 # Pop the stack to previous directory
 popd .

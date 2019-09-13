@@ -26,5 +26,5 @@ for location in $(find . -name '.*'); do
   file="${location##*/}"
   file="${file%.sh}"
   echo $file
-  # link "$DOTFILES/$location" "$HOME/$file"
+  link "$DOTFILES/$location" "$HOME/$file"
 done
