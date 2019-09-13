@@ -21,7 +21,6 @@ fi
 if ! [ -x "$(command -v brew)" ]; then
   echo 'Installing Homebrew…' >&2
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  cd $DOTFILES && brew bundle
 fi
 
 # Install the programs and applications defined Brewfile`
