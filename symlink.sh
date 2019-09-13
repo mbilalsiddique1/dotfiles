@@ -22,7 +22,7 @@ link() {
   ln -s "$from" "$to"
 }
 
-for location in $(find . -name '.*'); do
+for location in $(find home -name '.*'); do
   file="${location##*/}"
   file="${file%.sh}"
   echo $file
