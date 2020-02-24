@@ -6,9 +6,9 @@ fi
 
 # Editors.
 # --------
-export EDITOR='/usr/local/bin/subl'
-export VISUAL='/usr/local/bin/subl'
-export REACT_EDITOR=atom
+export EDITOR='/Applications/Visual Studio Code.app/Contents/MacOS/Electron'
+export VISUAL='/Applications/Visual Studio Code.app/Contents/MacOS/Electron'
+export REACT_EDITOR='/Applications/Visual Studio Code.app/Contents/MacOS/Electron'
 
 # Language.
 # ---------
