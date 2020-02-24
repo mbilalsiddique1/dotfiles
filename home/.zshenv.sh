@@ -8,6 +8,7 @@ fi
 # --------
 export EDITOR='/usr/local/bin/subl'
 export VISUAL='/usr/local/bin/subl'
+export REACT_EDITOR=atom
 
 # Language.
 # ---------

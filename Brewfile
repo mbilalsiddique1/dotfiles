@@ -1,5 +1,6 @@
 # Add necessary data sources
 tap "caskroom/cask"
+tap "AdoptOpenJDK/openjdk"
 
 # Media
 cask "spotify"
@@ -21,14 +22,18 @@ brew "tree"
 brew "wget"
 brew "gnupg"
 brew "node"
+brew "watchman"
+brew "yarn"
 brew "pbzip2"
 cask "imageoptim"
 cask "ngrok"
+cask "adoptopenjdk8"
 
 # Install docker dependencies
-brew "docker"
-brew "docker-machine"
+# brew "docker"
+# brew "docker-machine"
 cask "virtualbox"
+cask "vagrant"
 
 # Design
 cask "glueprint"

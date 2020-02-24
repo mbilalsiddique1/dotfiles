@@ -57,10 +57,23 @@ alias gu='git pull'
 alias gs='git status --short'
 alias gd='git diff'
 alias gdisc='git discard'
+alias kt='/Users/bilal/Sites/KeepTruckin/VVV/www/kt/public_html/wp-content/'
 
 function gc() {
   args=$@
   git commit -m "$args"
+}
+function gcs() {
+  args=$@
+  git commit -S -m "$args"
+}
+function gcss() {
+  args=$@
+  git commit -S -m "$args" --no-verify
+}
+function gcnv() {
+  args=$@
+  git commit -m "$args" --no-verify
 }
 function gca() {
   args=$@
@@ -110,6 +123,11 @@ function gl() {
   git --no-pager log --graph --no-merges --max-count=$count
 }
 
+alias nginx.restart='sudo nginx -s stop && sudo nginx'
+alias nginx.stop='sudo nginx -s stop'
+alias nginx.start='sudo nginx -s stop'
+alias kp='sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill'
+
 # own git workflow in hy origin with Tower
 
 # ===============
@@ -133,6 +151,22 @@ alias history-stats="history 0 | awk '{print \$2}' | stats | head"
 
 # Checks whether connection is up.
 alias net="ping google.com | grep -E --only-match --color=never '[0-9\.]+ ms'"
+
+alias phultaro="ssh root@67.205.149.57"
+
+# Random Sheeet
+alias download="scp -r root@67.205.149.57:/var/www/endurix.net/downloads/$@"
+
+alias tdown='noglob scp_wrap'
+function scp_wrap {
+  local -a args
+  local i
+  for i in "$@"; do case $i in
+    (*:*) args+=($i) ;;
+    (*) args+=(${~i}) ;;
+  esac; done
+  command scp -r root@67.205.149.57:"/var/www/endurix.net/downloads/${(@)args}"
+}
 
 # ==================================================================
 # = Functions =
@@ -298,3 +332,28 @@ function tarbz2() {
 }
 
 alias untarbz2='tar -xvjf'
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export GEM_HOME="/usr/local/lib/ruby/gems/2.6.0"
+export PATH="$GEM_HOME/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/scripts/rvm"
+
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+## ADDED by KT Mono Repo setup
+if [[ -r "${XDG_CONFIG_HOME:-${HOME}/.config}/ktmr/load.sh" ]]; then
+	source "${XDG_CONFIG_HOME:-${HOME}/.config}/ktmr/load.sh"
+fi
+## END ADDED by KT Mono Repo setup
