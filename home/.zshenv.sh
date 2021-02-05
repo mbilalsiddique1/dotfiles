@@ -66,3 +66,4 @@ unset BROWSER
 export HOMEBREW_AUTO_UPDATE_SECS='2592000'
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export GPG_TTY=$(tty) # For git commit signing
+if [ -e /Users/bilal/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/bilal/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

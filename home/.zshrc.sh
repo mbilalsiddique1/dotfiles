@@ -57,7 +57,7 @@ alias gu='git pull'
 alias gs='git status --short'
 alias gd='git diff'
 alias gdisc='git discard'
-alias kt='/Users/bilal/Sites/KeepTruckin/VVV/www/kt/public_html/wp-content/'
+alias kt='/Users/bilal/Sites/KeepTruckin/kt-wordpress/wp-content/'
 
 function gc() {
   args=$@
@@ -125,7 +125,7 @@ function gl() {
 
 alias nginx.restart='sudo nginx -s stop && sudo nginx'
 alias nginx.stop='sudo nginx -s stop'
-alias nginx.start='sudo nginx -s stop'
+alias nginx.start='sudo nginx'
 alias kp='sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill'
 
 # own git workflow in hy origin with Tower
@@ -357,3 +357,4 @@ if [[ -r "${XDG_CONFIG_HOME:-${HOME}/.config}/ktmr/load.sh" ]]; then
 	source "${XDG_CONFIG_HOME:-${HOME}/.config}/ktmr/load.sh"
 fi
 ## END ADDED by KT Mono Repo setup
+export PATH="/usr/local/opt/php/sbin:$PATH"
